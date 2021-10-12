@@ -128,6 +128,7 @@ def post(post_id):
 
 #phan 1
 @app.route('/create', methods=('GET', 'POST'))
+@login_required
 def create():
     if request.method == 'POST':
         title = request.form['title']
@@ -147,6 +148,7 @@ def create():
 
 
 @app.route('/<int:id>/edit', methods=('GET', 'POST'))
+@login_required
 def edit(id):
     post = get_post(id)
 
@@ -169,6 +171,7 @@ def edit(id):
 
 
 @app.route('/<int:id>/delete', methods=('POST',))
+@login_required
 def delete(id):
     post = get_post(id)
     conn = get_db_connection()
