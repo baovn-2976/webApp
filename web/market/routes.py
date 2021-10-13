@@ -109,6 +109,9 @@ def get_post(post_id):
 def home_page():
     return render_template('home.html')
 
+def hello():
+    return 'Hello, World!'
+
 
 @app.route('/index')
 #@login_required
